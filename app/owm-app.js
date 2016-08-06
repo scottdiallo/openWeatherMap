@@ -6,6 +6,11 @@ angular.module('OWMApp', ['ngRoute'])
                 templateUrl: 'home.html',
                 controller: 'HomeCtrl'
             })
+            .run(function ($rootScope, $location) {
+                $rootScope.$on('$routeChangeError', function () {
+                    $location.path('/error');
+                });
+            })
             .when('/city', {
                 templateUrl: 'city.html',
                 controller: 'CityCtrl',
@@ -20,9 +25,10 @@ angular.module('OWMApp', ['ngRoute'])
     .when('/error', {
         template: '<p>Error - Page Not Found</p>'
     })
-    .controller('HomeCtrl', ['$scope', function ($scope) {
-        //empty for now
-    }])
-    .controller('CityCtrl', function ($scope, city) {
-        $scope.city = city;
+    .controller('HomeCtrl', function () {
+        this.welcomeMessage = "Welcome Home";
     });
+
+.controller('CityCtrl', function ($scope, city) {
+    $scope.city = city;
+});
