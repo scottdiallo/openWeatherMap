@@ -1,0 +1,21 @@
+{
+  "name": "openWeatherMap",
+  "homepage": "https://github.com/scottdiallo/openWeatherMap",
+  "authors": [
+    "Scott Diallo <diallot@me.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
